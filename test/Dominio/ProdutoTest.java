@@ -1,4 +1,4 @@
-package Controllers;
+package Dominio;
 
 import org.junit.Assert;
 import org.junit.Test;

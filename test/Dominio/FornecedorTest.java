@@ -1,33 +1,31 @@
-package Controllers;
+package Dominio;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ClienteTest {
+public class FornecedorTest {
 
     @Test
     public void deveValidarDadosObrigatorios() {
+//        Cliente cliente = new Cliente("joao" , "12345678910" ,"joao@gmail.com" ,
+//                "123456" , "av ipiranga" , "partenon" , "12345678" , "porto alegre");
+
         try {
-            Cliente cliente = new Cliente(null, null, "joao",
-                    null, null, "", "123456789101213", null);
+            Fornecedor fornecedor = new Fornecedor(null, null, "joao",
+                    null, null, null, null, null , null);
 
         } catch (IllegalArgumentException exception) {
-            Assert.assertTrue(exception.getMessage().contains("informe um nome valido"));
-            Assert.assertTrue(exception.getMessage().contains("informe um cpf valido"));
+            Assert.assertTrue(exception.getMessage().contains("informe um nomeFantasia valido"));
+            Assert.assertTrue(exception.getMessage().contains("informe um cnpj valido"));
             Assert.assertTrue(exception.getMessage().contains("informe um email valido"));
             Assert.assertTrue(exception.getMessage().contains("informe um telefone valido"));
             Assert.assertTrue(exception.getMessage().contains("informe uma rua valida"));
             Assert.assertTrue(exception.getMessage().contains("informe um bairro valido"));
             Assert.assertTrue(exception.getMessage().contains("informe um cep valido"));
             Assert.assertTrue(exception.getMessage().contains("informe uma cidade valida"));
+            Assert.assertTrue(exception.getMessage().contains("informe um estado valido"));
+
         }
     }
-
-    @Test
-    public void deveValidarQuantidadeDeCampos() {
-        Cliente cliente1 = new Cliente("joao", "12345678910", "joao@gmail.com",
-                "123456", "av ipiranga", "partenon", "12345678", "porto alegre");
-
-        Assert.assertEquals("joao", cliente1.getNome());
-    }
 }
+

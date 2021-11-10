@@ -1,4 +1,4 @@
-package Controllers;
+package Dominio;
 
 import java.util.ArrayList;
 import java.util.Date;

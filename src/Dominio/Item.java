@@ -1,7 +1,6 @@
-package Controllers;
+package Dominio;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Item {
