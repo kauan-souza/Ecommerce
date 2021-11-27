@@ -1,12 +1,15 @@
 package Dominio;
 
+import java.sql.PreparedStatement;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Pedido {
 
-    private Date dataCompra;
+    private long id_pedido;
+    private LocalDateTime dataCompra;
     private Fornecedor fornecedor;
     private Cliente cliente;
     private Double valorTotal;
@@ -16,13 +19,10 @@ public class Pedido {
 
     protected List<String> mensagens = new ArrayList<>();
 
-    public Pedido(Date dataCompra, Fornecedor fornecedor, Cliente cliente, Double valorTotal,
-             Double valorTotalItens) {
+    public Pedido(LocalDateTime dataCompra, Fornecedor fornecedor, Cliente cliente) {
         this.dataCompra = dataCompra;
         this.fornecedor = fornecedor;
         this.cliente = cliente;
-        this.valorTotal = valorTotal;
-        this.valorTotalItens = valorTotalItens;
         validar();
     }
     protected void validar() {
@@ -35,15 +35,29 @@ public class Pedido {
         if (cliente == null ) {
             mensagens.add("informe um cliente");
         }
-        if (valorTotal == null || valorTotal > 0) {
-            mensagens.add("informe um valorTotal");
-        }
-        if (valorTotalItens == null || valorTotal > 0) {
-            mensagens.add("informe um valorTotalItens");
-        }
         if (!mensagens.isEmpty()) {
             throw new IllegalArgumentException(mensagens.toString());
         }
+    }
+
+    public Double getValorFrete() {
+        return valorFrete;
+    }
+
+    public long getId_pedido() {
+        return id_pedido;
+    }
+
+    public LocalDateTime getDataCompra() {
+        return dataCompra;
+    }
+
+    public Fornecedor getFornecedor() {
+        return fornecedor;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
     }
 }
 

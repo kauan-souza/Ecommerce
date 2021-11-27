@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Fornecedor {
 
+    private long id_fornecedor;
     private String nomeFantasia;
     private String cnpj;
     private String email;
@@ -67,4 +68,55 @@ public class Fornecedor {
         }
     }
 
+    public long getId_fornecedor() {
+        return id_fornecedor;
+    }
+
+    public String getNomeFantasia() {
+        return nomeFantasia;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public List<String> getMensagens() {
+        return mensagens;
+    }
 }

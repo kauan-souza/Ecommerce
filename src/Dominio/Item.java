@@ -27,4 +27,15 @@ public class Item {
             throw new IllegalArgumentException(mensagens.toString());
         }
     }
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public Double getValorTotalItem() {
+        return valorTotalItem;
+    }
 }

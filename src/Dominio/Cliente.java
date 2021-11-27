@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
-
+    private long id_cliente;
     private String nome;
     private String cpf;
     private String email;
@@ -59,6 +59,10 @@ public class Cliente {
         if (!mensagens.isEmpty()) {
             throw new IllegalArgumentException(mensagens.toString());
         }
+    }
+
+    public long getId_cliente() {
+        return id_cliente;
     }
 
     public String getNome() {
